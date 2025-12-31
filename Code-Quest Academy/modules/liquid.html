@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="glitch-transition"></div>
+
+<div class="lesson-viewer">
+  <div class="lesson-header">
+    <h1 class="lesson-title">SHOPIFY LIQUID</h1>
+    <p class="lesson-subtitle"></p>
+  </div>
+
+  <div class="lesson-content">
+    <div class="lesson-text">
+      <p></p>
+    </div>
+
+    <div class="code-panel">
+      <pre><code class="code-block"></code></pre>
+    </div>
+
+    <div class="terminal-output">
+      <div class="terminal-header">TERMINAL OUTPUT</div>
+      <div class="terminal-body">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" id="prevLesson">◀ PREVIOUS</button>
+    <button class="nav-btn" id="nextLesson">NEXT ▶</button>
+  </div>
+</div>
+
+<script>
+const lessons = [
+  {
+    title: "Lesson 1 — What is Liquid?",
+    text: "Liquid is Shopify’s templating language used to output dynamic content.",
+    code: "{{ product.title }}",
+    output: "Output: Sample Product"
+  },
+  {
+    title: "Lesson 2 — Loops",
+    text: "Loops let you iterate over collections.",
+    code: "{% for item in cart.items %}\n  {{ item.title }}\n{% endfor %}",
+    output: "Looping through cart items..."
+  },
+  {
+    title: "Lesson 3 — Filters",
+    text: "Filters modify output values.",
+    code: "{{ product.price | money }}",
+    output: "Formatted price: $19.99"
+  }
+];
+</script>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

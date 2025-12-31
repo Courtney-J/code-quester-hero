@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="glitch-transition"></div>
+
+<div class="lesson-viewer">
+  <div class="lesson-header">
+    <h1 class="lesson-title">JAVASCRIPT LOGIC</h1>
+    <p class="lesson-subtitle"></p>
+  </div>
+
+  <div class="lesson-content">
+    <div class="lesson-text">
+      <p></p>
+    </div>
+
+    <div class="code-panel">
+      <pre><code class="code-block"></code></pre>
+    </div>
+
+    <div class="terminal-output">
+      <div class="terminal-header">TERMINAL OUTPUT</div>
+      <div class="terminal-body">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" id="prevLesson">◀ PREVIOUS</button>
+    <button class="nav-btn" id="nextLesson">NEXT ▶</button>
+  </div>
+</div>
+
+<script>
+const lessons = [
+  {
+    title: "Lesson 1 — Variables",
+    text: "Variables store data. Use let, const, or var.",
+    code: "let score = 10;\nconst name = 'Courtney';",
+    output: "Variables initialized."
+  },
+  {
+    title: "Lesson 2 — Functions",
+    text: "Functions group reusable logic.",
+    code: "function greet() {\n  console.log('Hello');\n}",
+    output: "Function executed: greet()"
+  },
+  {
+    title: "Lesson 3 — Events",
+    text: "Events respond to user actions like clicks.",
+    code: "button.addEventListener('click', () => alert('Clicked!'));",
+    output: "Event listener attached."
+  }
+];
+</script>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

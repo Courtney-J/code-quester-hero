@@ -1,0 +1,555 @@
+<<<<<<< Updated upstream
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="glitch-transition"></div>
+
+<div class="dashboard">
+  <h1 class="title">CODE-QUEST ACADEMY</h1>
+  <p class="subtitle">Choose a module to begin</p>
+
+  <div class="module-grid">
+    <button class="module-btn" data-module="html">HTML BASICS</button>
+    <button class="module-btn" data-module="css">CSS STYLING</button>
+    <button class="module-btn" data-module="javascript">JAVASCRIPT LOGIC</button>
+    <button class="module-btn" data-module="liquid">SHOPIFY LIQUID</button>
+    <button class="module-btn" data-module="python">PYTHON</button>
+    <button class="module-btn" data-module="bash">BASH TERMINAL</button>
+  </div>
+</div>
+
+<audio id="glitchSound" src="assets/glitch-burst.mp3" preload="auto"></audio>
+
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>LETUSKODE — Ultimate Neon Theme</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================
+   LETUSKODE — ULTIMATE NEON GLITCH THEME
+   ========================================= */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg-main: #050011;
+  --bg-panel: #0F0F1A;
+
+  --accent-blue: #00D1FF;
+  --accent-pink: #FF0099;
+  --accent-green: #39FF14;
+  --accent-yellow: #F9FF00;
+
+  --text-primary: #F2F2F2;
+  --text-muted: #9AA0B2;
+
+  --transition-fast: 0.18s ease-out;
+  --transition-slow: 0.4s ease;
+
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --grid-opacity: 0.22;
+  --scanline-opacity: 0.16;
+}
+
+/* Synthwave theme */
+body.theme-synthwave {
+  --bg-main: #190019;
+  --bg-panel: #260026;
+  --accent-blue: #00E5FF;
+  --accent-pink: #FF4DFF;
+  --accent-green: #56FFB3;
+  --accent-yellow: #FFE066;
+  --grid-opacity: 0.25;
+  --scanline-opacity: 0.14;
+}
+
+/* Terminal theme */
+body.theme-terminal {
+  --bg-main: #020403;
+  --bg-panel: #050806;
+  --accent-blue: #00D1FF;
+  --accent-pink: #00FF99;
+  --accent-green: #00FF66;
+  --accent-yellow: #DFFF00;
+  --text-primary: #C8FFC8;
+  --text-muted: #82A882;
+  --grid-opacity: 0.2;
+  --scanline-opacity: 0.1;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1040 0, var(--bg-main) 45%, #000 100%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 4rem;
+  transition: background 0.6s ease, color 0.4s ease;
+}
+
+/* ---------- TRON GRID BACKGROUND ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right,
+      rgba(0,209,255,0.22) 1px,
+      rgba(255,0,153,0.22) 1px,
+      rgba(57,255,20,0.22) 1px,
+      rgba(249,255,0,0.22) 1px,
+      transparent 1px),
+    linear-gradient(to bottom,
+      rgba(0,209,255,0.2) 1px,
+      rgba(255,0,153,0.2) 1px,
+      rgba(57,255,20,0.2) 1px,
+      rgba(249,255,0,0.2) 1px,
+      transparent 1px);
+  background-size: 50px 50px;
+  opacity: var(--grid-opacity);
+  transform: perspective(800px) rotateX(60deg) translateY(180px);
+  transform-origin: top;
+  animation: tron-grid-move 18s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(0, 209, 255, 0.7));
+}
+
+@keyframes tron-grid-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 120px, 0 120px; }
+}
+
+/* ---------- SCANLINES ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.04) 0px,
+      rgba(255,255,255,0.04) 1px,
+      transparent 2px
+    );
+  mix-blend-mode: soft-light;
+  opacity: var(--scanline-opacity);
+}
+
+/* ---------- LAYOUT ---------- */
+main {
+  position: relative;
+  z-index: 5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 3rem auto;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(4, 0, 15, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,209,255,0.5);
+  box-shadow:
+    0 0 10px rgba(0,209,255,0.7),
+    0 0 18px rgba(255,0,153,0.5);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-blue);
+  box-shadow:
+    0 0 8px var(--accent-blue),
+    0 0 12px var(--accent-pink);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 180deg,
+    var(--accent-blue),
+    var(--accent-pink),
+    var(--accent-green),
+    var(--accent-yellow),
+    var(--accent-blue)
+  );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  animation: spin-orb 4s linear infinite;
+}
+
+@keyframes spin-orb {
+  to { transform: rotate(360deg); }
+}
+
+.nav-title {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+/* Theme toggle buttons */
+.theme-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.theme-btn {
+  font-size: 0.7rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.4);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.theme-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+.theme-btn.active {
+  border-color: var(--accent-yellow);
+  box-shadow:
+    0 0 8px var(--accent-yellow),
+    0 0 12px var(--accent-pink);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  text-align: center;
+  padding: 3.5rem 0 2.5rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  margin-top: 1rem;
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Glitch logo intro wrapper */
+.hero-logo-wrap {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- GLITCH TITLE ---------- */
+.glitch {
+  position: relative;
+  color: var(--accent-blue);
+  font-family: var(--font-heading);
+  text-shadow:
+    0 0 6px var(--accent-blue),
+    0 0 12px rgba(0, 209, 255, 0.8);
+  letter-spacing: 3px;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  opacity: 0;
+  animation: glitch-intro 1.2s ease-out forwards, minor-flicker 5s infinite 2.2s;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0.8;
+}
+
+/* Pink + Yellow layer */
+.glitch::before {
+  left: 2px;
+  text-shadow:
+    -2px 0 var(--accent-pink),
+    -4px 0 var(--accent-yellow);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+/* Blue + Green layer */
+.glitch::after {
+  left: -2px;
+  text-shadow:
+    -2px 0 var(--accent-blue),
+    -4px 0 var(--accent-green);
+  animation: glitch-anim2 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-intro {
+  0% { opacity: 0; transform: scale(1.15); filter: blur(4px); }
+  40% { opacity: 1; transform: scale(0.98); filter: blur(1px); }
+  70% { transform: scale(1.02); filter: blur(0.5px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes minor-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  95% { opacity: 0.65; }
+  97% { opacity: 1; }
+}
+
+/* Glitch clipping */
+@keyframes glitch-anim {
+  0% { clip-path: inset(0 0 80% 0); }
+  20% { clip-path: inset(10% 0 60% 0); }
+  40% { clip-path: inset(20% 0 40% 0); }
+  60% { clip-path: inset(40% 0 20% 0); }
+  80% { clip-path: inset(60% 0 10% 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip-path: inset(80% 0 0 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(40% 0 20% 0); }
+  60% { clip-path: inset(20% 0 40% 0); }
+  80% { clip-path: inset(10% 0 60% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  position: relative;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: radial-gradient(circle at top, var(--accent-blue), var(--accent-pink));
+  color: #050011;
+  box-shadow:
+    0 0 10px var(--accent-blue),
+    0 0 14px var(--accent-pink),
+    0 0 18px var(--accent-green);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background 0.6s ease;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent-blue),
+    var(--accent-pink),
+    var(--accent-yellow),
+    var(--accent-green),
+    var(--accent-blue)
+  );
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation: btn-orbit 3.4s linear infinite;
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  background: radial-gradient(circle at top, var(--accent-yellow), var(--accent-pink));
+  box-shadow:
+    0 0 12px var(--accent-blue),
+    0 0 18px var(--accent-pink),
+    0 0 22px var(--accent-green),
+    0 0 26px var(--accent-yellow);
+}
+
+@keyframes btn-orbit {
+  to { transform: rotate(360deg); }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-blue);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 8px rgba(255,255,255,0.25);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-yellow);
+  box-shadow:
+    0 0 10px var(--accent-yellow),
+    0 0 14px var(--accent-pink);
+}
+
+/* ---------- MODULES SECTION ---------- */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  text-shadow:
+    0 0 6px var(--accent-blue),
+    0 0 12px rgba(0,0,0,0.8);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------- MODULE CARD ---------- */
+.module-card {
+  background: linear-gradient(145deg, rgba(10,10,30,0.95), rgba(5, 5, 15, 0.98));
+  border-radius: 12px;
+  border: 1px solid rgba(0,209,255,0.2);
+  padding: 1.2rem;
+  box-shadow:
+    0 0 10px rgba(0,209,255,0.2),
+    0 0 14px rgba(255,0,153,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 14px var(--accent-blue),
+    0 0 18px var(--accent-pink),
+    0 0 22px var(--accent-green);
+}
+
+.module-card h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.module-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-left">
+      <div class="nav-logo"></div>
+      <div class="nav-title">LETUSKODE</div>
+    </div>
+
+    <div class="theme-toggle">
+      <button class="theme-btn active" data-theme="default">Default</button>
+      <button class="theme-btn" data-theme="synthwave">Synthwave</button>
+      <button class="theme-btn" data-theme="terminal">Terminal</button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-logo-wrap">
+      <h1 class="glitch" data-text="LETUSKODE">LETUSKODE</h1>
+    </div>
+    <p class="hero-subtitle">The Ultimate Neon Glitch UI Theme — Tron meets Synthwave meets Terminal.</p>
+
+    <div class="hero-actions">
+      <button class="btn btn-primary"><span>Get Started</span></button>
+      <button class="btn btn-ghost">Learn More</button>
+    </div>
+  </div>
+
+  <!-- MODULES -->
+  <section>
+    <h2 class="section-title">Modules</h2>
+
+    <div class="module-grid">
+      <div class="module-card">
+        <h3>Neon UI Kit</h3>
+        <p>Buttons, cards, panels, and glowing components ready to drop into your project.</p>
+      </div>
+
+      <div class="module-card">
+        <h3>Glitch Effects</h3>
+        <p>Animated glitch text, distortion layers, and cyberpunk overlays.</p>
+      </div>
+
+      <div class="module-card">
+        <h3>Tron Grid Engine</h3>
+        <p>Dynamic 3
+>>>>>>> Stashed changes

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="glitch-transition"></div>
+
+<div class="lesson-viewer">
+  <div class="lesson-header">
+    <h1 class="lesson-title">HTML BASICS</h1>
+    <p class="lesson-subtitle"></p>
+  </div>
+
+  <div class="lesson-content">
+    <div class="lesson-text">
+      <p></p>
+    </div>
+
+    <div class="code-panel">
+      <pre><code class="code-block"></code></pre>
+    </div>
+
+    <div class="terminal-output">
+      <div class="terminal-header">TERMINAL OUTPUT</div>
+      <div class="terminal-body">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lesson-nav">
+    <button class="nav-btn" id="prevLesson">◀ PREVIOUS</button>
+    <button class="nav-btn" id="nextLesson">NEXT ▶</button>
+  </div>
+</div>
+
+<script>
+const lessons = [
+  {
+    title: "Lesson 1 — What is HTML?",
+    text: "HTML is the structure of the web. It defines elements like headings, paragraphs, links, and images.",
+    code: "<h1>Hello World</h1>\n<p>This is my first webpage.</p>",
+    output: "Rendering HTML structure..."
+  },
+  {
+    title: "Lesson 2 — Headings",
+    text: "HTML provides six levels of headings, from <h1> to <h6>.",
+    code: "<h1>Main Title</h1>\n<h2>Section Title</h2>",
+    output: "Displaying heading hierarchy..."
+  },
+  {
+    title: "Lesson 3 — Links",
+    text: "Links are created using the <a> tag.",
+    code: '<a href="https://example.com">Visit Site</a>',
+    output: "Simulating link navigation..."
+  }
+];
+</script>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>
